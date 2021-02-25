@@ -6,12 +6,18 @@ import './Shop.css';
 const Shop = () => {
     const firstTen = fakeData.slice(0, 10);
     const [products, setProducts] = useState(firstTen);
-    // console.log(firstTen);
+    
+    const handleAddProduct = (product) => {
+        console.log('Product Added!', product);
+    }
+
     return (
         <div className="shop-container">
             <div className="product-container">
                 {
-                    products.map(product => <Product product={product}></Product>)
+                    products.map(product => 
+                            <Product handleAddProduct= {handleAddProduct} product={product}></Product>
+                        )
                 }
             </div>
 
